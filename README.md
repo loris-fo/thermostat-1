@@ -7,15 +7,17 @@
 * [How to Run](#how-to-run)
 * [Browsers](#browsers)
 * [Testing](#testing)
+* [Credit](#credit)
 * [License](#license)
 
 
 ##General Description
 
-This app implements a simple thermostat interface simulator.
-
+This app implements a simple thermostat interface simulator, coupled with a
+local temperature indicator for London, UK.
+ 
 It was created as an exercise in buiding a simple JavaScript web application, 
-using the Sinatra framework, jQuery functionality and following TDD methodology 
+using the Sinatra framework, jQuery and JSON functionality and following TDD methodology 
 (testing was done with [Jasmine](http://jasmine.github.io/2.0/introduction.html)). 
 
 
@@ -65,6 +67,12 @@ Tests were written with [Jasmine (2.0.0)](http://jasmine.github.io/2.0/introduct
 
 To run the tests, go to the root folder using 'Finder' and double-click the 
 `SpecRunner.html` file.
+
+
+##Credit
+
+The local weather window pulls the relevant termperature data 
+from [OpenWeatherMap's API](http://openweathermap.org/).
 
 
 ##License

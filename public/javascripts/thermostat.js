@@ -7,7 +7,7 @@ function Thermostat() {
 };
 
 function updateWeather() {
-    var myobject = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric", function(data) {
+    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric", function(data) {
         $('#current-weather').text(data.main.temp.toFixed()+"°");
     });
     // $('#current-weather').text(25+"°");
