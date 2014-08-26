@@ -6,11 +6,19 @@ function Thermostat() {
     this.powerSavingMode = true;
 };
 
+function updateWeather() {
+    var myobject = $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric", function(data) {
+        $('#current-weather').text(data.main.temp.toFixed()+"°");
+    });
+    // $('#current-weather').text(25+"°");
+};
+
 function updateTemperature() {
     $('.temp').text(thermostat.temperature);
     // $.post('http://localhost:9393/temperature_change', { newTemperature: thermostat.temperature });
-    $('h1').removeClass('low medium high').addClass(thermostat.energyUsage());
+    $('#thermostat-temp').removeClass('low medium high').addClass(thermostat.energyUsage());
 };
+
 
 Thermostat.prototype.maximumTemperature = function() {
     if(this.powerSavingMode) {
@@ -45,8 +53,12 @@ Thermostat.prototype.energyUsage = function() {
     return 'low';
 };
 
-$(document).ready(function(){
+
+$(document).ready(function() {
+
     updateTemperature();
+
+    updateWeather();
 
     $('.warmer').on('click', function() {
         thermostat.warmer();
@@ -60,11 +72,15 @@ $(document).ready(function(){
         thermostat.reset();
     });
 
-    $('button').on('click', function(){
+    $('button').on('click', function() {
         updateTemperature();
     });
 
-    $('.psm').on('change', function(){
+    $('.psm').on('change', function() {
+        if ((thermostat.powerSavingMode == false) && (thermostat.temperature > 25)) {
+            thermostat.temperature = 25;
+            updateTemperature();
+        };
         thermostat.powerSavingMode = $(this).prop('checked');
     });
 });

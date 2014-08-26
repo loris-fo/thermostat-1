@@ -10,11 +10,30 @@
         <script src='./javascripts/thermostat.js'></script>
     </head>
     <body>
-        <h1><span class='temp'></span>°</h1>
-        <button class='warmer'>+</button>
-        <button class='cooler'>-</button>
-        <button class='reset'>Reset</button>
-        <input class='psm' type='checkbox' checked> Power Saving Mode
+        <div class='weather-container'>
+            <p id='location'>London, UK</p>
+            <p id='current-weather'></p>
+            <p>
+                <span id='powered-by'>Powered by:</span>
+                <span id='source-link'><a href="http://openweathermap.org/">OpenWeatherMap</a></span>
+            </p>
+        </div>
+        <div class='thermostat-container'>
+            <p id='thermostat-title'>Thermostat</p>
+            <p id="thermostat-temp"><span class='temp'></span>°</p>
+ 
+            <button class='warmer temp-button' id='temp-up'>+</button>
+            <button class='cooler temp-button' id='temp-down'>-</button><br/>
+            <button class='reset reset-button' id='default-temp'>Reset</button><br/>
+
+            <section class='power-saving-mode-container'>
+                <div class="power-checkbox">
+                    <input class='psm' type="checkbox" value="1" id="power-saving-mode-checkbox" checked/>
+                    <label for="power-saving-mode-checkbox"></label>
+                </div>
+                <p id='power-saving-mode-text'>Power Saving Mode</p>
+            </section>
+        </div>
     </body>
  </html>
 
