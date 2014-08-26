@@ -18,7 +18,7 @@ It was created as an exercise in buiding a simple JavaScript web application,
 using the Sinatra framework, jQuery functionality and following TDD methodology 
 (testing was done with [Jasmine (2.0.0)](http://jasmine.github.io/2.0/introduction.html)). 
 
-Functional Description
+##Functional Description
 
 * The thermostat default is 20 degrees
 * The user can increase the temp by clicking the '+' button
@@ -62,9 +62,8 @@ it should hopefully look decent in other browsers as well):
 
 Tests were written with [Jasmine (2.0.0)](http://jasmine.github.io/2.0/introduction.html).
 
-To run the tests:
-
-* In 'Finder', go to the root directory and double-click the `SpecRunner.html` file.
+To run the tests, go to the root folder using 'Finder' and double-click the 
+`SpecRunner.html` file.
 
 
 ##License
