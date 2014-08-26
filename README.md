@@ -16,7 +16,7 @@ This app implements a simple thermostat interface simulator.
 
 It was created as an exercise in buiding a simple JavaScript web application, 
 using the Sinatra framework, jQuery functionality and following TDD methodology 
-(testing was done with [Jasmine (2.0.0)](http://jasmine.github.io/2.0/introduction.html)). 
+(testing was done with [Jasmine](http://jasmine.github.io/2.0/introduction.html)). 
 
 ##Functional Description
 
