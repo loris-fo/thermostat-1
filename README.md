@@ -39,7 +39,7 @@ Functional Description
 To run the app, clone the repo to a locall folder and in the terminal run:
 
 ```bash
-$  ch thermostat
+$  cd thermostat
 $  shotgun
 ```
 
