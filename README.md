@@ -44,11 +44,11 @@ using the Sinatra framework, jQuery and JSON functionality and following TDD met
 * The 'Power Saving Mode' is the default
 * If the 'Power Saving Mode' is turned on, the maximum temperature is 25 degrees
 * If the 'Power Saving Mode' is turned off, the maximum temperature is 35 degrees
-* If the 'Power Saving Mode' is turned on while the thermostat's temperature is set
-  above 25 degrees, the temperature is automatically set to the default max (25 degress)
+* If the 'Power Saving Mode' is turned on while the thermostat's is set
+  above 25 degrees, the temperature is automatically set back down to 25 degrees
 * The thermostat changes the color of display based on the selected temperature:
     * Green: under 18 degrees
-    * Yellow: between 18 and 24 degrees
+    * Orange: between 18 and 24 degrees
     * Red: above 24 degrees
 
 
