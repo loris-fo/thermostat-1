@@ -1,0 +1,15 @@
+body { 
+    font-family: Helvetica Neue;
+}
+
+.high {
+    color: red;
+}
+
+.medium {
+    color: orange;
+}
+
+.low {
+    color: green;
+}
