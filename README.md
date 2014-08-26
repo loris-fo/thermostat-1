@@ -18,6 +18,7 @@ It was created as an exercise in buiding a simple JavaScript web application,
 using the Sinatra framework, jQuery functionality and following TDD methodology 
 (testing was done with [Jasmine](http://jasmine.github.io/2.0/introduction.html)). 
 
+
 ##Functional Description
 
 * The thermostat default is 20 degrees
