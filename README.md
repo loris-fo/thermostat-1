@@ -2,6 +2,7 @@
 
 ##Table of Contents
 
+* [Screenshot](#screenshot)
 * [General Description](#general-description)
 * [Functional Description](#functional-description)
 * [How to Run](#how-to-run)
@@ -10,6 +11,18 @@
 * [Credit](#credit)
 * [License](#license)
 
+
+##Screenshot
+
+<table>
+	<tr>
+		<td align="center">
+			<a href="https://raw.githubusercontent.com/nadavmatalon/thermostat/master/public/images/thermostat.png">
+				<img src="/public/images/thermostat.png" />
+			</a>
+		</td>
+	</tr>
+</table>
 
 ##General Description
 
