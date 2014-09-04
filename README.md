@@ -6,6 +6,7 @@
 * [General Description](#general-description)
 * [Functional Description](#functional-description)
 * [How to Run](#how-to-run)
+* [See it Live on Heroku](#see-it-live-on-heroku)
 * [Browsers](#browsers)
 * [Testing](#testing)
 * [Credit](#credit)
@@ -65,6 +66,17 @@ Then open the browser of your choice and go to:
 ```
 http://localhost:9393/
 ```
+
+
+##See it Live on Heroku
+
+A live version of the app can be found at:
+
+http://makers-thermostat.herokuapp.com/
+
+As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
+(Heroku's giros take time to wake up...), so please be patient.
+
 
 ##Browsers
 
