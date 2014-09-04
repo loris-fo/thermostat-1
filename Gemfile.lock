@@ -22,6 +22,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  shotgun
-  sinatra
-  thin
+  shotgun (~> 0.9)
+  sinatra (~> 1.4.5)
+  thin (~> 1.6.2)
