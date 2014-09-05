@@ -29,10 +29,14 @@
 
 This app implements a simple thermostat interface simulator, coupled with a
 local temperature indicator for London, UK.
- 
+
 It was created as an exercise in buiding a simple JavaScript web application, 
 using the Sinatra framework, jQuery and JSON functionality and following TDD methodology 
 (testing was done with [Jasmine](http://jasmine.github.io/2.0/introduction.html)). 
+
+__Update__ (4.9.2014): the local temperature indicator window now changes it's background 
+color according to the current temperature on a scale that ranges between blue for cold weather
+to red for a hot one.
 
 
 ##Functional Description
