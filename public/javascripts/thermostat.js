@@ -9,8 +9,20 @@ function Thermostat() {
 function updateWeather() {
     $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric", function(data) {
         $('#current-weather').text(data.main.temp.toFixed()+"°");
+        document.getElementById('weather-container').style.backgroundColor = getBackgroundColor(data.main.temp.toFixed());
     });
-    // $('#current-weather').text(25+"°");
+};
+
+function getBackgroundColor(temp) {
+            var old_value = temp
+            var old_min = 0
+            var old_max = 30
+            var new_min = 0
+            var new_max = 100
+            var new_value = ( (old_value - old_min) / (old_max - old_min) ) * (new_max - new_min) + new_min;
+            b = new_value<50 ? 255 : Math.floor(255-(new_value*2-100)*255/100);
+            r = new_value>50 ? 255 : Math.floor((new_value*2)*255/100);
+            return 'rgba('+r+',100 , '+b+', 0.5)';
 };
 
 function updateTemperature() {

@@ -21,22 +21,14 @@ p {
 }
 
 
-.weather-container {
+#weather-container {
 	width: 350px;
 	height: 117px;
-	/*background-color: rgb(113, 174, 227);*/
 	border: 1px solid rgb(120, 120, 120);
 	margin-top: 45px;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 10px;
-	background: #EFEEEF; /* Old browsers */
-	background: -moz-linear-gradient(top,  #EFEEEF 0%,#E8E8E8 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EFEEEF), color-stop(100%,#E8E8E8)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #EFEEEF 0%,#E8E8E8 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #EFEEEF 0%,#E8E8E8 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #EFEEEF 0%,#E8E8E8 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #EFEEEF 0%,#E8E8E8 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAC3E9', endColorstr='#B87CE3',GradientType=0 ); /* IE6-9 */
 }
 
