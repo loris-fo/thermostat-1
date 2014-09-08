@@ -5,8 +5,8 @@
 * [Screenshot](#screenshot)
 * [General Description](#general-description)
 * [Functional Description](#functional-description)
-* [How to Run](#how-to-run)
-* [See it Live on Heroku](#see-it-live-on-heroku)
+* [See it Live on Github](#see-it-live-on-github)
+* [How to Run the App Locally](#how-to-run-the-app-locally)
 * [Browsers](#browsers)
 * [Testing](#testing)
 * [Credit](#credit)
@@ -24,6 +24,7 @@
 		</td>
 	</tr>
 </table>
+
 
 ##General Description
 
@@ -57,29 +58,30 @@ to red for a hot one.
     * Red: above 24 degrees
 
 
-##How to Run
+##See it Live on Github
+			
+A live version of the app can be found at:
 
-To run the app, clone the repo to a locall folder and in the terminal run:
+[Thermostat on Github.io](http://nadavmatalon.github.io/thermostat/)
+
+(Please see notes about browser compatibility below).
+
+
+##How to Run the App Locally
+
+To run the app, clone the repo locally and in the terminal run:
 
 ```bash
-$  cd thermostat
-$  shotgun
+$> cd thermostat
+$> bundle
+$> shotgun
 ```
 
 Then open the browser of your choice and go to:
+
 ```
 http://localhost:9393/
 ```
-
-
-##See it Live on Heroku
-
-A live version of the app can be found at:
-
-http://makers-thermostat.herokuapp.com/
-
-As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
-(Heroku's giros take time to wake up...), so please be patient.
 
 
 ##Browsers
@@ -96,8 +98,12 @@ it should hopefully look decent in other browsers as well):
 
 Tests were written with [Jasmine (2.0.0)](http://jasmine.github.io/2.0/introduction.html).
 
-To run the tests, go to the root folder using 'Finder' and double-click the 
-`SpecRunner.html` file.
+To run the tests, clone the repo locally and run:
+
+```bash
+$> cd thermostat
+$> open ./SpecRunner.html
+```
 
 
 ##Credit
@@ -109,5 +115,4 @@ from [OpenWeatherMap's API](http://openweathermap.org/).
 ##License
 
 <p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
-
 
