@@ -25,6 +25,7 @@
 	</tr>
 </table>
 
+
 ##General Description
 
 This app implements a simple thermostat interface simulator, coupled with a
