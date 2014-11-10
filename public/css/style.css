@@ -1,6 +1,6 @@
 body { 
-    font-family: Helvetica Neue;
-    text-align: center;
+	font-family: Helvetica Neue;
+	text-align: center;
 }
 
 p {
@@ -9,15 +9,15 @@ p {
 }
 
 .high {
-    color: rgb(200, 45, 45);
+	color: rgb(200, 45, 45);
 }
 
 .medium {
-    color: orange;
+	color: orange;
 }
 
 .low {
-    color: green;
+	color: green;
 }
 
 #weather-container {
@@ -32,7 +32,7 @@ p {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAC3E9', endColorstr='#B87CE3',GradientType=0 ); /* IE6-9 */
 	box-shadow: 2px 2px 4px rgb(120, 120, 120) !important;
 	-webkit-box-shadow: 2px 2px 4px rgb(120, 120, 120) !important;
-  	-moz-box-shadow: 2px 2px 4px rgb(120, 120, 120) !important;
+	-moz-box-shadow: 2px 2px 4px rgb(120, 120, 120) !important;
 }
 
 .thermostat-container {
@@ -46,7 +46,7 @@ p {
 	border-radius: 10px;
 	box-shadow: 2px 2px 4px rgb(120, 120, 120) !important;
 	-webkit-box-shadow: 2px 2px 4px rgb(120, 120, 120) !important;
-  	-moz-box-shadow: 2px 2px 4px rgb(120, 120, 120) !important;
+	-moz-box-shadow: 2px 2px 4px rgb(120, 120, 120) !important;
 }
 
 .open-button {
@@ -61,7 +61,6 @@ p {
 	border: none;
 	outline: none;
 	background-repeat: no-repeat;
-
 }
 
 .open-button:hover {
@@ -210,9 +209,9 @@ p {
 	-o-transition: background-position 0.1s linear;
 	transition: background-position 0.1s linear;
 	overflow: auto;
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
+	outline: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
 	text-decoration: none !important;
 }
 
@@ -298,11 +297,10 @@ p {
 	-o-transition: background-position 0.1s linear;
 	transition: background-position 0.1s linear;
 	overflow: auto;
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
+	outline: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
 	text-decoration: none !important;
-
 }
 
 .reset-button:active {
