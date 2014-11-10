@@ -24,6 +24,6 @@ Weather.prototype.getBackgroundColor = function() {
     if(this.temperature === '-') { return 'rgb(220, 220, 220)'; }
     if(this.temperature >= 25) { return 'rgb(200, 45, 45)'; }
     if(this.temperature >= 18) { return 'orange'; }
-    return 'green';
+    return 'rgb(75, 180, 75';
 };
 
