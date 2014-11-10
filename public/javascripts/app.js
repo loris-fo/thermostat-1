@@ -10,7 +10,7 @@
 
     function updateWeatherDisplay() {
         $('#current-weather').text(weather.temperature + '°');
-        $('#weather-container').css('background', weather.updateBackground(weather.temperature));
+        $('#weather-container').css('background-color', weather.getBackgroundColor(weather.temperature));
     }
 
     $(document).ready(function() {
