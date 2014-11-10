@@ -15,7 +15,7 @@ function getWeatherTemperature() {
         },
         error: function() { 
             currentTemperature = '-';
-        } 
+        }
     });
     return currentTemperature;
 }
