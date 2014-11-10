@@ -19,7 +19,7 @@
 
 <table>
 	<tr>
-		<td align="center">
+		<td align="center" width='400px'>
 			<a href="https://raw.githubusercontent.com/nadavmatalon/thermostat/master/public/images/thermostat.png">
 				<img src="/public/images/thermostat.png" />
 			</a>
