@@ -42,20 +42,21 @@ to red for a hot one.
 
 ##Functional Description
 
-* The thermostat default is 20 degrees
+* The thermostat default is 20°
 * The user can increase the temp by clicking the '+' button
 * The user can decrease the temp by clicking the '-' button
-* The user can reset the temperature back to default by clicking the 'Reset' button
-* The minimum temperature is 10 degrees
-* The 'Power Saving Mode' is the default
-* If the 'Power Saving Mode' is turned on, the maximum temperature is 25 degrees
-* If the 'Power Saving Mode' is turned off, the maximum temperature is 35 degrees
-* If the 'Power Saving Mode' is turned on while the thermostat's is set
-  above 25 degrees, the temperature is automatically set back down to 25 degrees
+* clicking the 'Reset' button resets the temperature to 20° and turns 
+  on the 'power saving mode'
+* The minimum temperature is 10°
+* The 'Power Saving Mode' is on by default
+* If the 'Power Saving Mode' is turned on, the maximum temperature is 25°
+* If the 'Power Saving Mode' is turned off, the maximum temperature is 35°
+* If the thermostat's temp is set above 25° and the 'Power Saving Mode' is 
+  turned on, the temperature is automatically set back down to 25°
 * The thermostat changes the color of display based on the selected temperature:
-    * Green: under 18 degrees
-    * Orange: between 18 and 24 degrees
-    * Red: above 24 degrees
+    * Green: under 18°
+    * Orange: between 18° - 24° 
+    * Red: above 24°
 
 
 ##See it Live on Github
@@ -102,7 +103,7 @@ To run the tests, clone the repo locally and run:
 
 ```bash
 $> cd thermostat
-$> open ./SpecRunner.html
+$> open ./spec/SpecRunner.html
 ```
 
 
@@ -115,4 +116,6 @@ from [OpenWeatherMap's API](http://openweathermap.org/).
 ##License
 
 <p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
+
+
 
