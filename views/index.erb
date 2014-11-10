@@ -4,20 +4,11 @@
         <link href="./css/style.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src='./javascripts/jquery-2.1.1.min.js'></script>
-        <% if false %>
-            <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
-        <% end %>
         <script src='./javascripts/thermostat.js'></script>
+        <script src='./javascripts/weather.js'></script>
+        <script src='./javascripts/app.js'></script>
     </head>
     <body>
-        <div id='weather-container'>
-            <p id='location'>London, UK</p>
-            <p id='current-weather'></p>
-            <p>
-                <span id='powered-by'>Powered by:</span>
-                <span id='source-link'><a href="http://openweathermap.org/">OpenWeatherMap</a></span>
-            </p>
-        </div>
         <div class='thermostat-container'>
             <p id='thermostat-title'>Thermostat</p>
             <p id="thermostat-temp"><span class='temp'></span>°</p>
@@ -33,6 +24,19 @@
                 </div>
                 <p id='power-saving-mode-text'>Power Saving Mode</p>
             </section>
+            <div>
+            </div>
+            <div class='open-button-container'>
+                <button class='open-button'></button>  
+            </div>
+        </div>
+        <div id='weather-container'>
+            <p id='location'>London, UK</p>
+            <p id='current-weather'></p>
+            <p>
+                <span id='powered-by'>Powered by:</span>
+                <span id='source-link'><a href="http://openweathermap.org/">OpenWeatherMap</a></span>
+            </p>
         </div>
     </body>
  </html>
