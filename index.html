@@ -1,433 +1,45 @@
-<!DOCTYPE html>
 <html>
-	<head>
-	    <title>Thermostat</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<script type="text/javascript" src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-		<style>
-			body { 
-			    font-family: Helvetica Neue;
-			    text-align: center;
-			}
+    <head>
+        <title>Thermostat</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+        <link type='text/css' rel='stylesheet' href='./public/css/style.css' />
+        <script type='text/javascript' src='./public/javascripts/jquery-2.1.1.min.js'></script>
+        <script type='text/javascript' src='./public/javascripts/thermostat.js'></script>
+        <script type='text/javascript' src='./public/javascripts/weather.js'></script>
+        <script type='text/javascript' src='./public/javascripts/app.js'></script>
+        <style>
+            .open-button {
+                background-image: url(./public/images/button-open.png);
+                background-color: transparent !important;
+                margin-top: 19px;
+                font-size: 22px;
+                font-weight: 200;
+                background-size: 23px 17px;
+                width: 23px;
+                height: 17px;
+                border: none;
+                outline: none;
+                background-repeat: no-repeat;
 
-			p {
-				margin: 0px;
-				padding: 0px;
-			}
-
-			.high {
-			    color: rgb(200, 45, 45);
-			}
-
-			.medium {
-			    color: orange;
-			}
-
-			.low {
-			    color: green;
-			}
-
-			#weather-container {
-				width: 350px;
-				height: 117px;
-				border: 1px solid rgb(120, 120, 120);
-				margin-top: 45px;
-				margin-left: auto;
-				margin-right: auto;
-				border-radius: 10px;
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAC3E9', endColorstr='#B87CE3',GradientType=0 ); /* IE6-9 */
-			}
-
-			.thermostat-container {
-				width: 350px;
-				height: 305px;
-				background-color: rgb(255, 255, 255);
-				border: 1px solid rgb(120, 120, 120);
-				margin-top: 45px;
-				margin-left: auto;
-				margin-right: auto;
-				border-radius: 10px;
-			}
-
-			#location {
-				font-family: Helvetica Neue;
-				font-weight: 500;
-				letter-spacing: 0.4px;
-				font-size: 1.6em;
-				margin-top: 10px;
-				margin-bottom: 5px;
-			}
-
-			#thermostat-title {
-				font-family: Helvetica Neue;
-				font-weight: 500;
-				letter-spacing: 0.4px;
-				font-size: 1.8em;
-				margin-top: 12px;
-				margin-bottom: 3px;
-			}
-
-			#thermostat-temp {
-				font-family: Helvetica Neue;
-				font-weight: 600;
-				letter-spacing: 0.4px;
-				font-size: 3.8em;
-			}
-
-			#current-weather {
-				font-family: Helvetica Neue;
-				font-weight: 500;
-				letter-spacing: 0.4px;
-				font-size: 1.8em;
-				margin-top: 4px;
-				margin-bottom: 6px;
-			}
-
-			#powered-by {
-				font-size: 0.9em;
-				color: black;
-			}
-
-			#source-link a {
-				font-size: 0.9em;
-				color: blue;
-				text-decoration: none !important;
-			}
-
-			#source-link a:hover {
-				font-size: 0.9em;
-				color: white;
-				cursor: default;
-				text-decoration: none !important;
-			}
-
-			#source-link a:active {
-				color: blue;
-				cursor: default;
-				text-decoration: none !important;
-			}
-
-			.temp-button {
-				-webkit-appearance: button;
-				background-color: #006dcc;
-				background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-				background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-				background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-				background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-				background-image: linear-gradient(to bottom, #0088cc, #0044cc);
-				background-repeat: repeat-x;
-				border-bottom-color: #a2a2a2;
-				border-color: #0044cc #0044cc #002a80;
-				border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-				border-color: #c5c5c5;
-				border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
-				border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-				border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-				border-top-width: 2px;
-				border-right-width: 2px;
-				border-bottom-width: 2px;
-				border-left-width: 2px;
-				border-top-style: outset;
-				border-right-style: outset;
-				border-bottom-style: outset;
-				border-left-style: outset;
-				border: 1px solid #bbbbbb;
-				border-radius: 4px;
-				-webkit-border-radius: 4px;
-				-moz-border-radius: 4px;
-				color: #ffffff;
-				cursor: default;
-				display: inline-block;
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-				filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-				font: -webkit-small-control;
-				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif font-size: 14px;
-				line-height: 20px;
-				text-align: center;
-				vertical-align: middle;
-				padding-top: 10px;
-				padding-right: 28px;
-				padding-bottom: 12px;
-				padding-left: 28px;
-				box-sizing: border-box;
-				margin-top: 9px;
-				margin-right: 8px;
-				margin-left: 8px;
-				margin-bottom: 6px;
-				margin-left: 1px;
-				letter-spacing: 0.4px;
-				word-spacing: normal;
-				line-height: normal;
-				text-transform: none;
-				text-indent: 0px;
-				text-shadow: none;
-				text-align: start;
-				-webkit-writing-mode: horizontal-tb !important;
-				font-size: 20px;
-				overflow: auto;
-				outline: none;
-				-webkit-box-shadow: none;
-				-moz-box-shadow: none;
-				box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 -1px 0 rgba(255, 255, 255, 0.3) inset;
-				text-decoration: none !important;
-			}
-
-			.temp-button:hover {
-				background-color: #0044cc;
-				background-position: 0 -15px;
-				-webkit-transition: background-position 0.1s linear;
-				-moz-transition: background-position 0.1s linear;
-				-o-transition: background-position 0.1s linear;
-				transition: background-position 0.1s linear;
-				overflow: auto;
-			    outline: none;
-			    -webkit-box-shadow: none;
-			    -moz-box-shadow: none;
-				text-decoration: none !important;
-
-			}
-
-			.temp-button:active {
-				background-color: #006dcc;
-				background-image: none;
-				text-decoration: none;
-				outline: 0;
-			}
-
-			.reset-button {
-				-webkit-appearance: button;
-				background-color: #006dcc;
-				background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
-				background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-				background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
-				background-image: -o-linear-gradient(top, #0088cc, #0044cc);
-				background-image: linear-gradient(to bottom, #0088cc, #0044cc);
-				background-repeat: repeat-x;
-				border-bottom-color: #a2a2a2;
-				border-color: #0044cc #0044cc #002a80;
-				border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-				border-color: #c5c5c5;
-				border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
-				border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-				border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-				border-top-width: 2px;
-				border-right-width: 2px;
-				border-bottom-width: 2px;
-				border-left-width: 2px;
-				border-top-style: outset;
-				border-right-style: outset;
-				border-bottom-style: outset;
-				border-left-style: outset;
-				border: 1px solid #bbbbbb;
-				border-radius: 4px;
-				-webkit-border-radius: 4px;
-				-moz-border-radius: 4px;
-				color: #ffffff;
-				cursor: default;
-				display: inline-block;
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
-				filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-				font: -webkit-small-control;
-				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif font-size: 14px;
-				line-height: 20px;
-				text-align: center;
-				vertical-align: middle;
-				padding-top: 10px;
-				padding-right: 53px;
-				padding-bottom: 12px;
-				padding-left: 54px;
-				box-sizing: border-box;
-				margin-top: 9px;
-				margin-right: 8px;
-				margin-bottom: 2px;
-				margin-left: 0em;
-				letter-spacing: 0.4px;
-				word-spacing: normal;
-				line-height: normal;
-				text-transform: none;
-				text-indent: 0px;
-				text-shadow: none;
-				text-align: start;
-				-webkit-writing-mode: horizontal-tb !important;
-				font-size: 17px;
-				overflow: auto;
-				outline: none;
-				-webkit-box-shadow: none;
-				-moz-box-shadow: none;
-				box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 -1px 0 rgba(255, 255, 255, 0.3) inset;
-				text-decoration: none !important;
-			}
-
-			.reset-button:hover {
-				background-color: #0044cc;
-				background-position: 0 -15px;
-				-webkit-transition: background-position 0.1s linear;
-				-moz-transition: background-position 0.1s linear;
-				-o-transition: background-position 0.1s linear;
-				transition: background-position 0.1s linear;
-				overflow: auto;
-			    outline: none;
-			    -webkit-box-shadow: none;
-			    -moz-box-shadow: none;
-				text-decoration: none !important;
-
-			}
-
-			.reset-button:active {
-				background-color: #006dcc;
-				background-image: none;
-				text-decoration: none;
-				outline: 0;
-			}
-			#power-saving-mode-checkbox {
-				width: 120px;
-				height: 30px;
-				background: #333;
-				margin: 0px 51px;
-				border-radius: 50px;
-				position: relative;
-			}
-
-			#power-saving-mode-text {
-				font-size: 18px;
-				margin-top: -43px;
-				margin-left: 89px;
-				margin-left: 82px;
-			}
-
-			input[type=checkbox] {
-				visibility: hidden;
-			}
-
-			.power-saving-mode-checkbox:before {
-				content: 'On';
-				position: absolute;
-				top: 12px;
-				left: 13px;
-				height: 2px;
-				color: white;
-				font-size: 16px;
-			}
-
-			.power-saving-mode-checkbox:after {
-				content: 'Off';
-				position: absolute;
-				top: 12px;
-				left: 84px;
-				height: 2px;
-				color: white;
-				font-size: 16px;
-			}
-
-			.power-saving-mode-checkbox:label {
-				display: block;
-				width: 52px;
-				height: 22px;
-				border-radius: 50px;
-
-				-webkit-transition: all .5s ease;
-				-moz-transition: all .5s ease;
-				-o-transition: all .5s ease;
-				-ms-transition: all .5s ease;
-				transition: all .5s ease;
-				cursor: default;
-				position: absolute;
-				top: 9px;
-				z-index: 1;
-				left: 12px;
-				background: #ddd;
-			}
-
-
-			.power-checkbox:hover {
-				background: rgb(232, 99, 51);
-
-			}
-
-			.power-saving-mode-checkbox input[type=checkbox]:checked + label {
-				left: 60px;
-				background: #26ca28;
-			}
-
-			.power-checkbox {
-				width: 81px;
-				height: 31px;
-				background: coral;
-				margin: 17px 39px;
-				border-radius: 50px;
-				position: relative;
-			}
-
-			.power-checkbox:before {
-				content: 'On';
-				position: absolute;
-				top: 7px;
-				left: 11px;
-				height: 2px;
-				color: white;
-				font-size: 16px;
-				letter-spacing: 1.1px;
-			}
-
-			.power-checkbox:after {
-				content: 'Off';
-				position: absolute;
-				top: 7px;
-				left: 47px;
-				height: 2px;
-				color: rgb(255, 255, 255);
-				font-size: 16px;
-				letter-spacing: 1.1px;
-			}
-
-			.power-checkbox label {
-				display: block;
-				width: 41px;
-				height: 27px;
-				border-radius: 50px;
-				-webkit-transition: all .5s ease;
-				-moz-transition: all .5s ease;
-				-o-transition: all .5s ease;
-				-ms-transition: all .5s ease;
-				transition: all .5s ease;
-				cursor: default;
-				position: absolute;
-				top: 2px;
-				z-index: 1;
-				left: 3px;
-				background: white;
-			}
-
-			.power-checkbox input[type=checkbox]:checked + label {
-				left: 37px;
-				background: #F6F4F4;
-			}
-
-			.power-saving-mode-container {
-				margin-left: 15px;
-			}
-		</style>
-	</head>
-	<body>
-		<div id='weather-container'>
-            <p id='location'>London, UK</p>
-            <p id='current-weather'></p>
-            <p>
-                <span id='powered-by'>Powered by:</span>
-                <span id='source-link'><a href="http://openweathermap.org/">OpenWeatherMap</a></span>
-            </p>
-        </div>
+            }
+            .open-button:hover {
+                background-image: url('./public/images/button-open-hover.png');
+                cursor: default;
+            }
+            .open-button:active {
+                background-image: url('./public/images/button-open-hover.png');
+                cursor: default;
+            }
+        </style>
+    </head>
+    <body>
         <div class='thermostat-container'>
             <p id='thermostat-title'>Thermostat</p>
-            <p id="thermostat-temp"><span class='temp'></span>°</p>
- 
+            <p id="thermostat-temp"><span class='temp'></span>°</p> 
             <button class='warmer temp-button' id='temp-up'>+</button>
             <button class='cooler temp-button' id='temp-down'>-</button><br/>
             <button class='reset reset-button' id='default-temp'>Reset</button><br/>
-
             <section class='power-saving-mode-container'>
                 <div class="power-checkbox">
                     <input class='psm' type="checkbox" value="1" id="power-saving-mode-checkbox" checked/>
@@ -435,98 +47,18 @@
                 </div>
                 <p id='power-saving-mode-text'>Power Saving Mode</p>
             </section>
+            <div class='open-button-container'>
+                <button class='open-button'></button>  
+            </div>
         </div>
-	</body>
-	<script type="text/javascript">
-
-		var thermostat = new Thermostat();
-
-		function Thermostat() {
-		    this.temperature = 20;
-		    this.powerSavingMode = true;
-		};
-
-		function updateWeather() {
-		    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric", function(data) {
-		        $('#current-weather').text(data.main.temp.toFixed()+"°");
-		        document.getElementById('weather-container').style.backgroundColor = getBackgroundColor(data.main.temp.toFixed());
-		    });
-		};
-
-		function getBackgroundColor(temp) {
-            var old_value = temp
-            var old_min = 0
-            var old_max = 30
-            var new_min = 0
-            var new_max = 100
-            var new_value = ( (old_value - old_min) / (old_max - old_min) ) * (new_max - new_min) + new_min;
-            b = new_value<50 ? 255 : Math.floor(255-(new_value*2-100)*255/100);
-            r = new_value>50 ? 255 : Math.floor((new_value*2)*255/100);
-            return 'rgba('+r+',100 , '+b+', 0.5)';
-		};
-
-		function updateTemperature() {
-		    $('.temp').text(thermostat.temperature);
-		    // $.post('http://localhost:9393/temperature_change', { newTemperature: thermostat.temperature });
-		    $('#thermostat-temp').removeClass('low medium high').addClass(thermostat.energyUsage());
-		};
-
-		Thermostat.prototype.maximumTemperature = function() {
-		    if(this.powerSavingMode) {
-		        return 25;
-		    };
-		    return 35;
-		};
-
-		Thermostat.prototype.minimumTemperature = function() {
-		    return 10;
-		};
-
-		Thermostat.prototype.warmer = function() {
-		    if(this.temperature < this.maximumTemperature()) {
-		        this.temperature += 1;
-		    };
-		};
-
-		Thermostat.prototype.cooler = function() {
-		    if(this.temperature > this.minimumTemperature()) {
-		        this.temperature -= 1;
-		    };
-		};
-
-		Thermostat.prototype.reset = function() {
-		    this.temperature = 20;
-		};
-
-		Thermostat.prototype.energyUsage = function() {
-		    if(this.temperature >= 25) return 'high';
-		    if(this.temperature >= 18) return 'medium';
-		    return 'low';
-		};
-
-		$(document).ready(function() {
-		    updateTemperature(); 
-		    updateWeather();
-		    $('.warmer').on('click', function() {
-		        thermostat.warmer();
-		    });
-		    $('.cooler').on('click', function() {
-		        thermostat.cooler();
-		    });
-		    $('.reset').on('click', function() {
-		        thermostat.reset();
-		    });
-		    $('button').on('click', function() {
-		        updateTemperature();
-		    });
-		    $('.psm').on('change', function() {
-		        if ((thermostat.powerSavingMode == false) && (thermostat.temperature > 25)) {
-		            thermostat.temperature = 25;
-		            updateTemperature();
-		        };
-		        thermostat.powerSavingMode = $(this).prop('checked');
-		    });
-		});
-	</script>
-</html>
+        <div id='weather-container'>
+            <p id='location'>London, UK</p>
+            <p id='current-weather'></p>
+            <p>
+                <span id='powered-by'>Powered by:</span>
+                <span id='source-link'><a href="http://openweathermap.org/">OpenWeatherMap</a></span>
+            </p>
+        </div>
+    </body>
+ </html>
 
