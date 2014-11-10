@@ -114,7 +114,6 @@ This app has been tested with and supports the following browsers (though
 it should hopefully look decent in other browsers as well):
 
 * __Google Chrome__ (36.0)
-* __Apple Safari__ (7.0.5)
 * __Mozilla Firefox__ (31.0)
 
 
