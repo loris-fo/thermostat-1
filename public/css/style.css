@@ -67,13 +67,11 @@ p {
 .open-button:hover {
 	background-image: url('/images/button-open-hover.png');
 	cursor: default;
-	outline: none;
 }
 
 .open-button:active {
 	background-image: url('/images/button-open-hover.png');
 	cursor: default;
-	outline: none;
 }
 
 .rotate-button {
@@ -97,7 +95,6 @@ p {
 	margin-top: 12px;
 	margin-bottom: 3px;
 }
-
 
 #thermostat-temp {
 	font-family: Helvetica Neue;
@@ -128,16 +125,13 @@ p {
 }
 
 #source-link a:hover {
-	font-size: 0.9em;
 	color: white;
 	cursor: default;
-	text-decoration: none !important;
 }
 
 #source-link a:active {
 	color: blue;
 	cursor: default;
-	text-decoration: none !important;
 }
 
 .temp-button {
@@ -176,9 +170,6 @@ p {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
 	font: -webkit-small-control;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif font-size: 14px;
-	line-height: 20px;
-	margin-bottom: 0;
-	padding: 4px 12px;
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	vertical-align: middle;
@@ -223,7 +214,6 @@ p {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
 	text-decoration: none !important;
-
 }
 
 .temp-button:active {
@@ -269,9 +259,6 @@ p {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
 	font: -webkit-small-control;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif font-size: 14px;
-	line-height: 20px;
-	margin-bottom: 0;
-	padding: 4px 12px;
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	vertical-align: middle;
@@ -324,6 +311,7 @@ p {
 	text-decoration: none;
 	outline: 0;
 }
+
 #power-saving-mode-checkbox {
 	width: 120px;
 	height: 30px;
@@ -369,7 +357,6 @@ input[type=checkbox] {
 	width: 52px;
 	height: 22px;
 	border-radius: 50px;
-
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
 	-o-transition: all .5s ease;
@@ -383,10 +370,8 @@ input[type=checkbox] {
 	background: #ddd;
 }
 
-
 .power-checkbox:hover {
 	background: rgb(232, 99, 51);
-
 }
 
 .power-saving-mode-checkbox input[type=checkbox]:checked + label {
@@ -451,3 +436,4 @@ input[type=checkbox] {
 .power-saving-mode-container {
 	margin-left: 15px;
 }
+
