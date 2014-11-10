@@ -117,5 +117,3 @@ from [OpenWeatherMap's API](http://openweathermap.org/).
 
 <p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
 
-
-
