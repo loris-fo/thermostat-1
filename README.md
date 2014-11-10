@@ -52,6 +52,8 @@ weather widget UI.
 
 ##Functional Description
 
+__Thermostat__
+
 * The thermostat default is 20°
 * The user can increase the temp by clicking the '+' button
 * The user can decrease the temp by clicking the '-' button
@@ -67,6 +69,17 @@ weather widget UI.
     * Green: under 18°
     * Orange: between 18° - 24° 
     * Red: above 24°
+
+__Weather Widget__
+
+* The widget shows the current temperature at London, UK
+* Widget can be opened/closed by clicking on the small arrow at the 
+  bottom of the Thermostat interface
+* Background color changes according to the temperature:
+    * Green: under 18°
+    * Orange: between 18° - 24° 
+	* Red: above 24°
+	* Grey: No reading
 
 
 ##See it Live on Github
