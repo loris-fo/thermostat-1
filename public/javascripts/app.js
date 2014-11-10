@@ -9,8 +9,8 @@
     }
 
     function updateWeatherDisplay() {
-        $('#current-weather').text(weather.temperature + '°');
-        $('#weather-container').css('background-color', weather.getBackgroundColor(weather.temperature));
+        $('#current-weather').text(weather.temperature + '\°');
+        $('#weather-container').css('background-color', weather.getBackgroundColor());
     }
 
     $(document).ready(function() {
@@ -36,10 +36,10 @@
         });
 
         $('.psm').on('change', function() {
-            if ((thermostat.powerSavingMode == false) && (thermostat.temperature > 25)) {
+            if ((thermostat.powerSavingMode === false) && (thermostat.temperature > 25)) {
                 thermostat.temperature = 25;
                 updateTempDisplay();
-            };
+            }
             thermostat.powerSavingMode = $(this).prop('checked');
         });
 

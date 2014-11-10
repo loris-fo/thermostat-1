@@ -20,10 +20,10 @@ function getWeatherTemperature() {
     return currentTemperature;
 }
 
-Weather.prototype.getBackgroundColor = function(temp) {
-    if(this.temperature === '-') return 'rgb(220, 220, 220)';
-    if(this.temperature >= 25) return 'rgb(200, 45, 45)';
-    if(this.temperature >= 18) return 'orange';
+Weather.prototype.getBackgroundColor = function() {
+    if(this.temperature === '-') { return 'rgb(220, 220, 220)' };
+    if(this.temperature >= 25) { return 'rgb(200, 45, 45)' };
+    if(this.temperature >= 18) { return 'orange' };
     return 'green';
 };
 

@@ -7,7 +7,7 @@ function Thermostat() {
 Thermostat.prototype.maximumTemperature = function() {
     if(this.powerSavingMode) {
         return 25;
-    };
+    }
     return 35;
 };
 
@@ -18,13 +18,13 @@ Thermostat.prototype.minimumTemperature = function() {
 Thermostat.prototype.warmer = function() {
     if(this.temperature < this.maximumTemperature()) {
         this.temperature += 1;
-    };
+    }
 };
 
 Thermostat.prototype.cooler = function() {
     if(this.temperature > this.minimumTemperature()) {
         this.temperature -= 1;
-    };
+    }
 };
 
 Thermostat.prototype.reset = function() {
@@ -33,8 +33,8 @@ Thermostat.prototype.reset = function() {
 };
 
 Thermostat.prototype.energyUsage = function() {
-    if(this.temperature >= 25) return 'high';
-    if(this.temperature >= 18) return 'medium';
+    if(this.temperature >= 25) { return 'high' };
+    if(this.temperature >= 18) { return 'medium' };
     return 'low';
 };
 
