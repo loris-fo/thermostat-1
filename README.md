@@ -1,12 +1,14 @@
 #Thermostat
 
+[![Code Climate](https://codeclimate.com/github/nadavmatalon/thermostat/badges/gpa.svg)](https://codeclimate.com/github/nadavmatalon/thermostat)
+
 ##Table of Contents
 
 * [Screenshot](#screenshot)
 * [General Description](#general-description)
 * [Functional Description](#functional-description)
 * [See it Live on Github](#see-it-live-on-github)
-* [How to Run the App Locally](#how-to-run-the-app-locally)
+* [How to Install the App Locally](#how-to-install-the-app-locally)
 * [Browsers](#browsers)
 * [Testing](#testing)
 * [Credit](#credit)
@@ -28,16 +30,24 @@
 
 ##General Description
 
-This app implements a simple thermostat interface simulator, coupled with a
-local temperature indicator for London, UK.
+This [JavaScript](http://en.wikipedia.org/wiki/JavaScript) app implements 
+a thermostat interface simulator, coupled with a
+local temperature widget for London, UK.
 
-It was created as an exercise in buiding a simple JavaScript web application, 
-using the Sinatra framework, jQuery and JSON functionality and following TDD methodology 
+The app was created as an exercise in buiding a 
+[JavaScript](http://en.wikipedia.org/wiki/JavaScript) application, 
+using the [Sinatra](http://www.sinatrarb.com/) framework, 
+[jQuery](http://jquery.com) and [JSON](http://www.json.org/) functionality 
+by following [TDD](http://en.wikipedia.org/wiki/Test-driven_development) methodology 
 (testing was done with [Jasmine](http://jasmine.github.io/2.0/introduction.html)). 
 
 __Update__ (4.9.2014): the local temperature indicator window now changes it's background 
 color according to the current temperature on a scale that ranges between blue for cold weather
 to red for a hot one.
+
+__Update__ (10.11.2014): refactored the entire code. Changes included splitting the
+JavaScript code into distinct files, refactoring the tests and updating the 
+weather widget UI.
 
 
 ##Functional Description
@@ -68,13 +78,13 @@ A live version of the app can be found at:
 (Please see notes about browser compatibility below).
 
 
-##How to Run the App Locally
+##How to Install the App Locally
 
 To run the app, clone the repo locally and in the terminal run:
 
 ```bash
 $> cd thermostat
-$> bundle
+$> bundle install
 $> shotgun
 ```
 
